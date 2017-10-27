@@ -17,12 +17,6 @@ RUN apt-get upgrade -y
 RUN apt-get install -y apt-utils
 RUN apt-get install -y ssh curl gnupg gnupg2
 
-# Adding repository for git-lfs
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-
-# Installing git-lfs
-RUN apt-get install -y git-lfs
-
 # Required for gganimate
 RUN apt-get install -y ffmpeg imagemagick
 
