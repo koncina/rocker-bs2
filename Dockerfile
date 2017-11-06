@@ -20,6 +20,9 @@ RUN apt-get install -y ssh curl gnupg gnupg2
 # Required for gganimate
 RUN apt-get install -y ffmpeg imagemagick
 
+# Required for ggforce
+RUN apt-get install -y libudunits2-dev
+
 RUN Rscript -e 'devtools::install_github("koncina/unilur")'
 RUN Rscript -e 'devtools::install_github("koncina/iosp@dev")'
 RUN Rscript -e 'devtools::install_github("koncina/bs2site")'
