@@ -27,5 +27,9 @@ RUN Rscript -e 'devtools::install_github("koncina/unilur")'
 RUN Rscript -e 'devtools::install_github("koncina/iosp@dev")'
 RUN Rscript -e 'devtools::install_github("koncina/bs2site")'
 
+ADD packages.yml /tmp/packages.yml
+
+RUN Rscript -e 'bs2site::pkg_missing(path = "/tmp/", scan = FALSE, install = TRUE)'
+
 ENV BS2_DEPLOY=1
 

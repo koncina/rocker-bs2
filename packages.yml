@@ -1,0 +1,42 @@
+gganimate:
+  source: github
+  username: dgrtwo
+
+ggplot1:
+  source: ignore
+  
+biobroom:
+  source: bioconductor
+
+limma:viridis
+  source: bioconductor
+
+qvalue:
+  source: bioconductor
+  
+biomaRt:
+  source: bioconductor
+
+rtracklayer:
+  source: bioconductor
+  
+GEOquery:
+  source: bioconductor
+
+datasauRus:
+  source: cran
+
+ggbeeswarm:
+  source: cran
+
+ggforce:
+  source: cran
+
+vembedr:
+  source: cran
+  
+viridis:
+  source: cran
+  
+pryr:
+  source: cran
