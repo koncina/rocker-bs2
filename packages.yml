@@ -1,42 +1,31 @@
-gganimate:
-  source: github
-  username: dgrtwo
-
-ggplot1:
-  source: ignore
-  
 biobroom:
-  source: bioconductor
-
-limma:
-  source: bioconductor
-
-qvalue:
   source: bioconductor
   
 biomaRt:
   source: bioconductor
-
-rtracklayer:
-  source: bioconductor
   
 GEOquery:
   source: bioconductor
-
-datasauRus:
-  source: cran
-
-ggbeeswarm:
-  source: cran
-
-ggforce:
-  source: cran
-
-vembedr:
-  source: cran
   
-viridis:
-  source: cran
+rtracklayer:
+  source: bioconductor
   
-pryr:
+qvalue:
+  source: bioconductor
+  
+limma:
+  source: bioconductor
+
+gganimate:
+  source: github
+  username: dgrtwo
+  
+kableExtra:
   source: cran
+
+ggplot1:
+  source: ignore
+
+ggrepel:
+  source: cran
+
