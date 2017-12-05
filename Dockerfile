@@ -7,25 +7,23 @@ LABEL description="Docker image to build the biostat2 website"
 
 ARG DEBIAN_FRONTEND=noninteractive
 # To avoid being trapped in the pager during knitting...
-# Maybe there is a better way?
-RUN sed -i 's/usr\/bin\/pager/bin\/cat/g' /usr/local/lib/R/etc/Renviron
-# Using bash for rstudio user
-RUN sed -i 's/\/home\/rstudio:/\/home\/rstudio:\/bin\/bash/g' /etc/passwd
+# And use bash instead of 
+RUN sed -i 's/usr\/bin\/pager/bin\/cat/g' /usr/local/lib/R/etc/Renviron && \
+    sed -i 's/\/home\/rstudio:/\/home\/rstudio:\/bin\/bash/g' /etc/passwd
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y apt-utils
-RUN apt-get install -y ssh curl gnupg gnupg2
+# ffmpeg imagemagick are required for gganimate
+# libudunits2-dev is required fo ggforce
 
-# Required for gganimate
-RUN apt-get install -y ffmpeg imagemagick
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y apt-utils && \
+    apt-get install -y ssh curl gnupg gnupg2 && \
+    apt-get install -y ffmpeg imagemagick && \
+    apt-get install -y libudunits2-dev rsync
 
-# Required for ggforce
-RUN apt-get install -y libudunits2-dev
-
-RUN Rscript -e 'devtools::install_github("koncina/unilur")'
-RUN Rscript -e 'devtools::install_github("koncina/iosp@dev")'
-RUN Rscript -e 'devtools::install_github("koncina/bs2site")'
+RUN Rscript -e 'devtools::install_github("koncina/unilur")' && \
+    Rscript -e 'devtools::install_github("koncina/iosp@dev")' && \
+    Rscript -e 'devtools::install_github("koncina/bs2site")'
 
 ADD packages.yml /tmp/packages.yml
 
