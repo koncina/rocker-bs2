@@ -21,7 +21,7 @@ RUN apt-get update && \
     apt-get install -y ffmpeg imagemagick && \
     apt-get install -y libudunits2-dev rsync
 
-RUN Rscript -e 'devtools::install_github("koncina/unilur")' && \
+RUN Rscript -e 'devtools::install_github("koncina/unilur@dev")' && \
     Rscript -e 'devtools::install_github("koncina/iosp@dev")' && \
     Rscript -e 'devtools::install_github("koncina/bs2site")'
 
