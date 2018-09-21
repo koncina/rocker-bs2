@@ -19,8 +19,9 @@ RUN apt-get update && \
     apt-get install -y apt-utils && \
     apt-get install -y ssh curl gnupg gnupg2 && \
     apt-get install -y ffmpeg imagemagick && \
-    apt-get install -y cargo && \
     apt-get install -y libudunits2-dev rsync
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
 RUN Rscript -e 'devtools::install_github("koncina/unilur")' && \
     Rscript -e 'devtools::install_github("koncina/iosp@dev")' && \
