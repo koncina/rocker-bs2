@@ -19,7 +19,8 @@ RUN apt-get update && \
     apt-get install -y apt-utils && \
     apt-get install -y ssh curl gnupg gnupg2 && \
     apt-get install -y ffmpeg imagemagick && \
-    apt-get install -y libudunits2-dev rsync
+    apt-get install -y libudunits2-dev rsync && \
+    apt-get install -y libbz2-dev liblzma-dev
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
