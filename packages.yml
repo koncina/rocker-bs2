@@ -17,8 +17,7 @@ limma:
   source: bioconductor
 
 gganimate:
-  source: github
-  username: dgrtwo
+  source: cran
   
 kableExtra:
   source: cran
